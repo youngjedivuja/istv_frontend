@@ -1,0 +1,22 @@
+<mat-drawer-container class="navbar-container">
+  <mat-drawer #sidenav [opened]="opened" id="menu" mode="side">
+    <hr>
+    <mat-list class="role-menu-list">
+      <mat-list-item *ngFor="let menuItem of menuItems" class="role-menu-list-item">
+        <mat-icon mat-list-icon>{{menuItem.icon}}</mat-icon>
+        <div mat-line routerLink="{{menuItem.path}}">{{menuItem.title}}</div>
+      </mat-list-item>
+      <mat-list-item class="role-menu-list-item logout">
+        <mat-icon mat-list-icon>meeting_room</mat-icon>
+        <div (click)="logout()" mat-line>Logout</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button (click)="sidenav.toggle()" id="hamburger" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+

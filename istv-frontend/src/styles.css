@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-primary {
+  background-color: #197278 !important;
+}
+
+.color-secondary {
+  background-color: #242429 !important;
+}
+
+.view {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.isum-logo {
+  cursor: pointer;
+}
+
+.mat-tooltip {
+  font-size: 12px !important;
+}

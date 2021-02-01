@@ -1,0 +1,22 @@
+<div class="main-content">
+  <div class="login">
+    <img alt="" class="logo" src="../../assets/logo2.svg">
+    <form [formGroup]="form">
+      <div class="input-username">
+        <mat-form-field class="full-width username">
+          <mat-label>Username</mat-label>
+          <input formControlName="username" matInput>
+        </mat-form-field>
+      </div>
+      <div class="input-password">
+        <mat-form-field class="full-width password">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput type="password">
+        </mat-form-field>
+      </div>
+      <button (click)="login()" [disabled]="!form.valid" class="login-btn" color="primary" mat-raised-button>LOGIN
+        <span class="material-icons">send</span>
+      </button>
+    </form>
+  </div>
+</div>

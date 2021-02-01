@@ -1,0 +1,69 @@
+::ng-deep .mat-drawer-inner-container {
+  background-color: #242429;
+}
+
+::ng-deep mat-drawer-content {
+  height: 100vh !important;
+}
+
+::ng-deep .role-menu-list {
+  text-align: left;
+  height: 100%;
+}
+
+::ng-deep .role-menu-list .role-menu-list-item {
+  color: white !important;
+  cursor: pointer;
+  font-size: 20px !important;
+
+}
+
+::ng-deep .role-menu-list .role-menu-list-item:hover {
+  background-color: #197278;
+  transition: background-color 150ms linear;
+}
+
+::ng-deep mat-drawer .mat-drawer-inner-container {
+  overflow-y: hidden !important;
+  text-align: center;
+  user-select: none;
+}
+
+::ng-deep .isum-logo {
+  margin-top: 1em;
+}
+
+::ng-deep .role-menu-list .role-menu-list-item.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+::ng-deep ::selection {
+  color: white;
+  /*background: #34be5b;*/
+  background: #197278;
+}
+
+#hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #hamburger {
+    display: initial;
+    position: fixed;
+  }
+
+}
+
+*:focus {
+  border: none;
+  outline: none;
+}
+
+
+
+
+
+

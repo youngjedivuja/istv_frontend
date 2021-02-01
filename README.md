@@ -1,1 +1,1 @@
-# istv_frontend
+Angular frontedn app for istv

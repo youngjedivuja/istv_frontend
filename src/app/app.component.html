@@ -1,10 +1,11 @@
 <mat-drawer-container class="navbar-container">
-  <mat-drawer #sidenav [opened]="opened" id="menu" mode="side">
+  <mat-drawer #sidenav [opened]="opened" id="menu" mode="side"><!--
+    <img class="logo" routerLink="/" src="../../assets/logo3.svg">-->
     <hr>
     <mat-list class="role-menu-list">
-      <mat-list-item *ngFor="let menuItem of menuItems" class="role-menu-list-item">
+      <mat-list-item *ngFor="let menuItem of menuItems" routerLink="{{menuItem.path}}" class="role-menu-list-item">
         <mat-icon mat-list-icon>{{menuItem.icon}}</mat-icon>
-        <div mat-line routerLink="{{menuItem.path}}">{{menuItem.title}}</div>
+        <div mat-line >{{menuItem.title}}</div>
       </mat-list-item>
       <mat-list-item class="role-menu-list-item logout">
         <mat-icon mat-list-icon>meeting_room</mat-icon>

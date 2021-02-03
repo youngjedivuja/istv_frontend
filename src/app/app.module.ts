@@ -29,9 +29,17 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {registerLocaleData} from '@angular/common';
 import localeRS from '@angular/common/locales/sr-Latn';
 import {MatTabsModule} from '@angular/material/tabs';
+import { CeoProductAdministrationComponent } from './ceo-product-administration/ceo-product-administration.component';
+import { CeoEmployeeAdministrationComponent } from './ceo-employee-administration/ceo-employee-administration.component';
+import { CeoOrdersAdministrationComponent } from './ceo-orders-administration/ceo-orders-administration.component';
+import { BuyerProductOverviewComponent } from './buyer-product-overview/buyer-product-overview.component';
+import { BuyerOrdersOverviewComponent } from './buyer-orders-overview/buyer-orders-overview.component';
 
 
 const appRoutes: Routes = [
+  {path: 'product-overview', component: CeoProductAdministrationComponent/*, canActivate: [AuthGuard]*/},
+  {path: 'employee-overview', component: CeoEmployeeAdministrationComponent/*, canActivate: [AuthGuard]*/},
+  {path: 'order-overview', component: CeoOrdersAdministrationComponent/*, canActivate: [AuthGuard]*/},
   {path: '', component: LoginComponent},
 ];
 
@@ -41,6 +49,11 @@ registerLocaleData(localeRS);
   declarations: [
     AppComponent,
     LoginComponent,
+    CeoProductAdministrationComponent,
+    CeoEmployeeAdministrationComponent,
+    CeoOrdersAdministrationComponent,
+    BuyerProductOverviewComponent,
+    BuyerOrdersOverviewComponent,
   ],
   imports: [
     BrowserModule,

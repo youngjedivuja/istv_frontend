@@ -38,7 +38,7 @@ export class AuthenticationService {
         this.userToken = jwt_decode(token);
         this.token = token;
         localStorage.setItem('userToken', token);
-        this.router.navigate(['upis-sati']);
+        this.router.navigate(['app-component']);
       }
     }, error => {
       this.openSnackBar(error.error, 'Zatvori');

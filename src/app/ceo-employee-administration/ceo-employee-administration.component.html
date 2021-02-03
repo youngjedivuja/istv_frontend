@@ -1,0 +1,64 @@
+<div class="tabela-upis">
+  <div class="header">
+    <h1>Pregled zaposlenih</h1>
+  </div>
+  <hr>
+  <mat-form-field class="search-employee">
+    <mat-label>Pretraga zaposlenih...</mat-label>
+    <input #inputPar (keyup)="searchWorker(inputPar.value)" matInput type="text">
+  </mat-form-field>
+  <div class="workers-table">
+    <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+      <ng-container matColumnDef="firstname">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Ime</th>
+        <td *matCellDef="let employee" mat-cell> {{ employee?.userId.personId.firstName }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="surname">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Prezime</th>
+        <td *matCellDef="let employee" mat-cell> {{employee?.userId.personId.lastName}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="jmbg">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="jmbg">JMBG</th>
+        <td *matCellDef="let employee" mat-cell> {{employee?.userId.personId.jmbg}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="employmentStartDate">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Datum zapošljenja</th>
+        <td *matCellDef="let employee" mat-cell>{{employee?.employmentStartDate}}</td>
+      </ng-container>
+
+      <!--<ng-container matColumnDef="options">
+        <th *matHeaderCellDef mat-header-cell> Opcije</th>
+        <td *matCellDef="let employee" class="edit-options" mat-cell>
+          <i (click)="openEditDialog(employee.userId)" *ngIf="employee.userId?.recordStatus"
+             class="large material-icons edit-btn" matTooltip="Izmeni zaposlenog">edit</i>
+          <i (click)="openWorkerInfo(employee.userId)" class="large material-icons hours-btn"
+             matTooltip="Pregled sati">watch_later</i>
+          <i (click)="openFinancialDebitDialog(employee.userId)" class="large material-icons edit-btn"
+             matTooltip="Zaduženja">add_circle</i>
+          <i (click)="downloadContract(employee.userId)" class="large material-icons download-btn"
+             matTooltip="Preuzmi ugovor">picture_as_pdf</i>
+          <i (click)="toggleUserRecordStatus(employee.userId.id, false)" *ngIf="employee.userId?.recordStatus"
+             class="large material-icons delete-btn" matTooltip="Deaktiviraj zaposlenog">block</i>
+          <i (click)="toggleUserRecordStatus(employee.userId.id, true)" *ngIf="!employee.userId?.recordStatus"
+             class="large material-icons enable-btn" matTooltip="Aktiviraj zaposlenog">done</i>
+
+        </td>
+      </ng-container>-->
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" class="paginator">
+    </mat-paginator>
+    <div class="add-categories">
+      <!--<button (click)="openAddEmployeeDialog()" class="color-secondary add-btn" mat-fab matTooltip="Dodajte zaposlenog">
+        <mat-icon>add</mat-icon>
+      </button>-->
+      <div *ngIf="dataSource.filteredData.length == 0" class="no-data">Nema podataka za zadati parametar</div>
+    </div>
+  </div>
+</div>

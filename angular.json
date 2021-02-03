@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "istv-frontend"
+  "defaultProject": "istv-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

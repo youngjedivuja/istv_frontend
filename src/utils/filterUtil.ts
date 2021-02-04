@@ -1,15 +1,15 @@
-import {IUserCategory} from "../@types/UserCategory";
-import {IUser} from "../@types/User";
-
-
-export const filterUserCategory = (user: IUser, inputPar: string) => {
-  return [user.firstName, user.lastName, user.indeks].some(prop => prop.toLowerCase().startsWith(inputPar.toLowerCase()));
+export const filterUser = (userId, inputPar: string) => {
+  return [userId.personId.name, userId.personId.surname]
+    .some(prop => prop.toLowerCase().startsWith(inputPar.toLowerCase()));
 };
 
+
+/*
 export const sortCategoryDate = (categ1: IUserCategory, categ2: IUserCategory): number => {
   if (!(categ1 && categ2)) {
     return 0;
   }
+
 
   const timestamp1 = new Date(categ1.startDate).getTime();
   const timestamp2 = new Date(categ2.startDate).getTime();
@@ -21,3 +21,4 @@ export const sortCategoryDate = (categ1: IUserCategory, categ2: IUserCategory): 
     return 0;
   }
 };
+*/

@@ -1,0 +1,253 @@
+body {
+  color: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  margin: 0 auto 0 10%;
+  padding-top: 2em;
+}
+
+hr {
+  width: 80%;
+  border: none;
+  height: 3px;
+  color: #242429;
+  background-color: #242429;
+}
+
+.header > h1 {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: center;
+  margin-right: 10%;
+}
+
+.search-employee {
+  margin-left: 60%;
+  width: 30%;
+}
+
+.add-role {
+  margin-left: 10%;
+  background-color: white;
+  color: #125256;
+}
+
+.add-role:hover {
+  background-color: #125256;
+  color: white;
+}
+
+.workers-table {
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+td {
+  width: 10%;
+  height: 30px;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 16px;
+}
+
+td input {
+  width: 40% !important;
+  text-align: center !important;
+}
+
+td input::placeholder {
+  color: black;
+}
+
+th {
+  background-color: #242429;
+  color: white;
+  text-align: center !important;
+  height: 50px;
+  font-size: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+
+tr:hover {
+  background-color: rgba(25, 114, 120, 0.2);
+  transition: .1s;
+}
+
+th label {
+  margin-right: 10px;
+}
+
+table {
+  width: 100%;
+  border-radius: 5px;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: inline-flex !important;
+}
+
+.edit-options > i {
+  font-size: 28px !important;
+  cursor: pointer;
+}
+
+.edit-options > i {
+  margin-right: 10px;
+}
+
+#add-worker {
+  float: right;
+  margin-top: 10px;
+  background-color: #197278;
+  color: white !important;
+}
+
+#add-worker:hover {
+  background-color: #10484c;
+  transition: .3s;
+}
+
+.delete-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #e50c0c,
+  1px -1px 0 #e50c0c,
+  -1px 1px 0 #e50c0c,
+  1px 1px 0 #e50c0c;
+  user-select: none;
+}
+
+.delete-btn:hover {
+  color: #e50c0c;
+  transition: .3s;
+}
+
+.hours-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  user-select: none;
+}
+
+.hours-btn:hover {
+  color: teal;
+  transition: .3s;
+}
+
+.download-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  user-select: none;
+}
+
+.download-btn:hover {
+  color: teal;
+  transition: .3s;
+}
+
+.edit-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  user-select: none;
+}
+
+.edit-btn:hover {
+  color: teal;
+  transition: .3s;
+}
+
+.paginator {
+  background-color: #c8c5c5;
+  color: black;
+}
+
+.add-employee {
+  float: right;
+  margin-top: 10px;
+  background-color: #197278;
+  color: white !important;
+}
+
+.add-employee:hover {
+  background-color: #125256 !important;
+}
+
+.add-categories {
+  height: 7%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.add-btn {
+  float: right;
+  margin-right: 25px;
+  margin-top: 15px;
+  outline: none;
+}
+
+.add-btn:hover {
+  background-color: #197278 !important;
+  transition: 250ms;
+}
+
+.no-data {
+  margin-left: 10%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .tabela-upis > h1 {
+    font-size: 27px;
+  }
+
+  .search-employee {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .tabela-upis {
+    margin-right: auto;
+  }
+
+  .mat-header-cell {
+    font-size: 13.5px;
+  }
+
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0;
+  }
+
+}
+
+.disable {
+  background-color: lightgray;
+  font-style: italic;
+}
+
+.enable-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.enable-btn:hover {
+  color: #04a704;
+}

@@ -34,6 +34,8 @@ import { CeoEmployeeAdministrationComponent } from './ceo-employee-administratio
 import { CeoOrdersAdministrationComponent } from './ceo-orders-administration/ceo-orders-administration.component';
 import { BuyerProductOverviewComponent } from './buyer-product-overview/buyer-product-overview.component';
 import { BuyerOrdersOverviewComponent } from './buyer-orders-overview/buyer-orders-overview.component';
+import { CeoEmployeeCreateDialogComponent } from './ceo-employee-administration/ceo-employee-create-dialog/ceo-employee-create-dialog.component';
+import { CeoEmployeeViewComponent } from './ceo-employee-administration/ceo-employee-view/ceo-employee-view.component';
 
 
 const appRoutes: Routes = [
@@ -54,6 +56,8 @@ registerLocaleData(localeRS);
     CeoOrdersAdministrationComponent,
     BuyerProductOverviewComponent,
     BuyerOrdersOverviewComponent,
+    CeoEmployeeCreateDialogComponent,
+    CeoEmployeeViewComponent,
   ],
   imports: [
     BrowserModule,

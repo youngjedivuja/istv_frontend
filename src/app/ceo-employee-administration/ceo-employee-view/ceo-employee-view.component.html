@@ -1,1 +1,75 @@
-<p>ceo-employee-view works!</p>
+<form [formGroup]="form">
+  <div class="employee-view">
+    <mat-form-field class="full-width username">
+      <mat-label>Ime</mat-label>
+      <label>
+        <input [value]="employee?.userId.personId.name" formControlName="name" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Prezime</mat-label>
+      <label>
+        <input [value]="employee?.userId.personId.surname" formControlName="surname" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Jmbg</mat-label>
+      <label>
+        <input [value]="employee?.userId.personId.unid" formControlName="unid" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Broj lične karte</mat-label>
+      <label>
+        <input [value]="employee?.userId.personId.pin" formControlName="pin" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Elektronska pošta</mat-label>
+      <label>
+        <input [value]="employee?.userId.email" formControlName="email" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Korisničko ime</mat-label>
+      <label>
+        <input [value]="employee?.userId.username" formControlName="username" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Pozicija</mat-label>
+      <label>
+        <input [value]="employee?.position" formControlName="position" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Banka</mat-label>
+      <label>
+        <input [value]="employee?.bank" formControlName="bank" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Datum zapošljenja</mat-label>
+      <label>
+        <input [value]="employee?.employmendStartDate" formControlName="employmentStartDate" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Prekid radnog odnosa</mat-label>
+      <label>
+        <input [value]="employee?.employmendEndDate" formControlName="employmentEndDate" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <button (click)="closeHoursDialog()" class="close-btn color-secondary" mat-raised-button>ZATVORI</button>
+  </div>
+</form>

@@ -19,4 +19,16 @@ export class EmployeeServices {
     return this.http.put(`${environment.apiUrl}/employees/${employeeId}/toggle`, {responseType: 'json'});
   }
 
+  getEmployeeById(employeeId: number): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/employees/${employeeId}`, {responseType: 'json'});
+  }
+
+  saveEmployee(employee): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/employees/saveEmployeeDTO`, employee, {responseType: 'json'});
+  }
+
+  updateEmployee(employee): Observable<any> {
+    return this.http.put(`${environment.apiUrl}/employees`, employee, {responseType: 'json'});
+  }
+
 }

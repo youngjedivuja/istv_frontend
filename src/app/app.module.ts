@@ -36,12 +36,15 @@ import { BuyerProductOverviewComponent } from './buyer-product-overview/buyer-pr
 import { BuyerOrdersOverviewComponent } from './buyer-orders-overview/buyer-orders-overview.component';
 import { CeoEmployeeCreateDialogComponent } from './ceo-employee-administration/ceo-employee-create-dialog/ceo-employee-create-dialog.component';
 import { CeoEmployeeViewComponent } from './ceo-employee-administration/ceo-employee-view/ceo-employee-view.component';
+import { CeoProductCreateComponent } from './ceo-product-administration/ceo-product-create/ceo-product-create.component';
+import { CeoOrdersProductsDialogComponent } from './ceo-orders-administration/ceo-orders-products-dialog/ceo-orders-products-dialog.component';
 
 
 const appRoutes: Routes = [
-  {path: 'product-overview', component: CeoProductAdministrationComponent/*, canActivate: [AuthGuard]*/},
-  {path: 'employee-overview', component: CeoEmployeeAdministrationComponent/*, canActivate: [AuthGuard]*/},
-  {path: 'order-overview', component: CeoOrdersAdministrationComponent/*, canActivate: [AuthGuard]*/},
+  {path: 'product-overview', component: CeoProductAdministrationComponent, canActivate: [AuthGuard]},
+  {path: 'employee-overview', component: CeoEmployeeAdministrationComponent, canActivate: [AuthGuard]},
+  {path: 'order-overview', component: CeoOrdersAdministrationComponent, canActivate: [AuthGuard]},
+  {path: 'app-component', component: AppComponent, canActivate: [AuthGuard]},
   {path: '', component: LoginComponent},
 ];
 
@@ -58,6 +61,8 @@ registerLocaleData(localeRS);
     BuyerOrdersOverviewComponent,
     CeoEmployeeCreateDialogComponent,
     CeoEmployeeViewComponent,
+    CeoProductCreateComponent,
+    CeoOrdersProductsDialogComponent,
   ],
   imports: [
     BrowserModule,

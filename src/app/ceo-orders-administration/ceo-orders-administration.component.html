@@ -1,1 +1,52 @@
-<p>ceo-orders-administration works!</p>
+<div class="table-of-orders">
+  <div class="header">
+    <h1>Pregled porudžbina</h1>
+  </div>
+  <hr>
+  <div class="orders-table">
+    <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+
+      <ng-container matColumnDef="orderStatus">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Status</th>
+        <td *matCellDef="let order" mat-cell> {{ order?.orderStatus }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="companyName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Firma kupca</th>
+        <td *matCellDef="let order" mat-cell> {{ order?.buyerId.companyName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="deliveryAddress">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Adresa dostave</th>
+        <td *matCellDef="let order" mat-cell> {{ order?.deliveryAddress }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalPrice">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Total</th>
+        <td *matCellDef="let order" mat-cell> {{ order.total }} RSD</td>
+      </ng-container>
+
+      <ng-container matColumnDef="products">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Proizvodi</th>
+        <td *matCellDef="let order" class="edit-options" mat-cell>
+          <i (click)="openEditDialog(order)"
+             class="large material-icons product-btn" matTooltip="Proizvodi">shopping_bag</i>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="options">
+        <th *matHeaderCellDef mat-header-cell> Opcije</th>
+        <td *matCellDef="let order" class="edit-options" mat-cell>
+          <i (click)="toggleProductOrderStatus(order.id, 'Odbijena')" *ngIf="order.orderStatus === 'Na čekanju'"
+             class="large material-icons delete-btn" matTooltip="Deaktiviraj proizvod">block</i>
+          <i (click)="toggleProductOrderStatus(order.id, 'Prihvaćena')" *ngIf="order.orderStatus === 'Na čekanju'"
+             class="large material-icons enable-btn" matTooltip="Aktiviraj proizvod">done</i>
+        </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" class="paginator">
+    </mat-paginator>
+  </div>
+</div>

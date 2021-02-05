@@ -1,5 +1,5 @@
 import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
-import {ceoMenu, professorMenu, studentMenu} from '../utils/pageMenuItems';
+import {buyerMenu, ceoMenu, employeeMenu} from '../utils/pageMenuItems';
 import {MatSidenav} from '@angular/material/sidenav';
 import {AuthenticationService} from '../utils/authentication.service';
 
@@ -22,18 +22,15 @@ export class AppComponent implements OnInit, DoCheck {
   ngDoCheck(): void {
     if (window.location.pathname === '/' || window.innerWidth < 600) {
       this.opened = false;
-
     } else {
-      /*this.opened = true;
-      if (this.authService.isCEO()) {
-        this.menuItems = professorMenu;
-      } else if (this.authService.isProjectManager()) {
-        this.menuItems = managerMenu;
-      } else {
-        this.menuItems = studentMenu;
-      }*/
       this.opened = true;
-      this.menuItems = ceoMenu;
+      if (this.authService.isCEO()) {
+        this.menuItems = ceoMenu;
+      } else if (this.authService.isBuyer()) {
+        this.menuItems = buyerMenu;
+      } else {
+        this.menuItems = employeeMenu;
+      }
     }
 }
 

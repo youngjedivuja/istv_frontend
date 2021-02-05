@@ -1,1 +1,87 @@
-<h1>//TODO: Dodavanje zaposlenog</h1>
+<form [formGroup]="form">
+  <div class="employee-view">
+    <mat-form-field class="full-width username">
+      <mat-label>Ime</mat-label>
+      <label>
+        <input formControlName="name" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Prezime</mat-label>
+      <label>
+        <input formControlName="surname" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Jmbg</mat-label>
+      <label>
+        <input formControlName="unid" matInput >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Broj lične karte</mat-label>
+      <label>
+        <input formControlName="pin" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Pol</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="M">M</mat-option>
+        <mat-option value="Ž">Ž</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width username">
+      <label>
+        <input [matDatepicker]="picker3" formControlName="birthDate" matInput
+               placeholder="Datum rodjenja">
+      </label>
+      <mat-datepicker-toggle [for]="picker3" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker3>
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="full-width username">
+      <mat-label>Elektronska pošta</mat-label>
+      <label>
+        <input formControlName="email" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Korisničko ime</mat-label>
+      <label>
+        <input formControlName="username" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Pozicija</mat-label>
+      <label>
+        <input formControlName="position" matInput >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Banka</mat-label>
+      <label>
+        <input formControlName="bank" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <label>
+        <input [matDatepicker]="picker1" formControlName="employmentStartDate" matInput
+               placeholder="Datum zaposlenja">
+      </label>
+      <mat-datepicker-toggle [for]="picker1" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker1>
+      </mat-datepicker>
+    </mat-form-field>
+    <br>
+    <button (click)="saveUser()" class="save-btn color-secondary" mat-raised-button>Sačuvaj</button>
+  </div>
+</form>

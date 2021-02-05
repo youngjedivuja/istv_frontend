@@ -1,0 +1,73 @@
+body {
+  color: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  margin: 0 auto 0 10%;
+  padding-top: 2em;
+}
+
+.order-products {
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+td {
+  width: 10%;
+  height: 30px;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 16px;
+}
+
+td input {
+  width: 40% !important;
+  text-align: center !important;
+}
+
+td input::placeholder {
+  color: black;
+}
+
+th {
+  background-color: #242429;
+  color: white;
+  text-align: center !important;
+  height: 50px;
+  font-size: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+
+tr:hover {
+  background-color: rgba(25, 114, 120, 0.2);
+  transition: .1s;
+}
+
+th label {
+  margin-right: 10px;
+}
+
+table {
+  width: 100%;
+  border-radius: 5px;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: inline-flex !important;
+}
+
+.paginator {
+  background-color: #c8c5c5;
+  color: black;
+}
+
+.close-btn{
+  margin-top: 0.5em;
+  float: right;
+  color: white;
+}

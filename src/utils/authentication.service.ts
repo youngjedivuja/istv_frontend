@@ -38,7 +38,13 @@ export class AuthenticationService {
         this.userToken = jwt_decode(token);
         this.token = token;
         localStorage.setItem('userToken', token);
-        this.router.navigate(['app-component']);
+        if (this.isCEO()) {
+          this.router.navigate(['employee-overview']);
+        }else if (this.isBuyer()){
+
+        }else {
+          this.router.navigate(['product-overview']);
+        }
       }
     }, error => {
       this.openSnackBar(error.error, 'Zatvori');
@@ -57,13 +63,8 @@ export class AuthenticationService {
   isCEO(): boolean {
     return this.userRoles.includes('ROLE_CEO');
   }
-
-  isScholar(): boolean {
-    return this.userRoles.includes('ROLE_SCHOLAR');
-  }
-
-  isProjectManager(): boolean {
-    return this.userRoles.includes('ROLE_PROJECT_MANAGER');
+  isBuyer(): boolean {
+    return this.userRoles.includes('ROLE_BUYER');
   }
 
   openSnackBar(message: string, action: string): void {

@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <div class="product-view">
+    <mat-form-field class="full-width username">
+      <mat-label>Šifra</mat-label>
+      <label>
+        <input formControlName="productCode" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Pun naziv</mat-label>
+      <label>
+        <input formControlName="fullName" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Zemlja porekla</mat-label>
+      <label>
+        <input formControlName="countryOfOrigin" matInput >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width username">
+      <mat-label>Na stanju</mat-label>
+      <label>
+        <input formControlName="storageQuantity" matInput>
+      </label>
+    </mat-form-field>
+    <br>
+    <button (click)="saveProduct()" class="save-btn color-secondary" mat-raised-button>Sačuvaj</button>
+  </div>
+</form>

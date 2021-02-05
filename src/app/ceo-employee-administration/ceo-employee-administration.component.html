@@ -1,4 +1,4 @@
-<div class="tabela-upis">
+<div class="employee-table">
   <div class="header">
     <h1>Pregled zaposlenih</h1>
   </div>
@@ -31,17 +31,12 @@
         <td *matCellDef="let employee" mat-cell>{{employee?.employmendStartDate}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="employmentEndDate">
-        <th *matHeaderCellDef mat-header-cell mat-sort-header>Prekid radnog odnosa</th>
-        <td *matCellDef="let employee" mat-cell>{{employee?.employmendEndDate}}</td>
-      </ng-container>
-
       <ng-container matColumnDef="options">
         <th *matHeaderCellDef mat-header-cell> Opcije</th>
         <td *matCellDef="let employee" class="edit-options" mat-cell>
           <i (click)="openEditDialog(employee)" *ngIf="employee.recordStatus"
              class="large material-icons edit-btn" matTooltip="Izmeni zaposlenog">edit</i>
-          <i (click)="openWorkerInfo(employee)" class="large material-icons hours-btn"
+          <i (click)="openViewEmployeeDialog(employee)" class="large material-icons view-btn"
              matTooltip="Detaljni pregled">person</i>
           <i (click)="toggleEmployeeRecordStatus(employee.id, false)" *ngIf="employee.recordStatus"
              class="large material-icons delete-btn" matTooltip="Deaktiviraj zaposlenog">block</i>

@@ -30,17 +30,6 @@ hr {
   width: 30%;
 }
 
-.add-role {
-  margin-left: 10%;
-  background-color: white;
-  color: #125256;
-}
-
-.add-role:hover {
-  background-color: #125256;
-  color: white;
-}
-
 .workers-table {
   width: 80%;
   height: 80%;
@@ -128,7 +117,7 @@ table {
   transition: .3s;
 }
 
-.hours-btn {
+.view-btn {
   color: white;
   text-shadow: -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -137,21 +126,7 @@ table {
   user-select: none;
 }
 
-.hours-btn:hover {
-  color: teal;
-  transition: .3s;
-}
-
-.download-btn {
-  color: white;
-  text-shadow: -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-  user-select: none;
-}
-
-.download-btn:hover {
+.view-btn:hover {
   color: teal;
   transition: .3s;
 }
@@ -212,7 +187,7 @@ table {
 
 @media only screen and (max-width: 600px) {
 
-  .tabela-upis > h1 {
+  .employee-table > h1 {
     font-size: 27px;
   }
 
@@ -221,9 +196,6 @@ table {
     margin-left: 10%;
   }
 
-  .tabela-upis {
-    margin-right: auto;
-  }
 
   .mat-header-cell {
     font-size: 13.5px;

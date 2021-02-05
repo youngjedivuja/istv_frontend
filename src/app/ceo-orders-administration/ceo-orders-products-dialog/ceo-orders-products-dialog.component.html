@@ -1,0 +1,23 @@
+<div class="order-products">
+  <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+    <ng-container matColumnDef="productInfo">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Proizvod</th>
+      <td *matCellDef="let orderProduct" mat-cell> {{ orderProduct?.product.productCode }} - {{ orderProduct?.product.fullName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Cena po komadu</th>
+      <td *matCellDef="let orderProduct" mat-cell> {{ orderProduct?.product.price }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Količina</th>
+      <td *matCellDef="let orderProduct" mat-cell> {{ orderProduct?.quantity }}</td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" class="paginator">
+  </mat-paginator>
+  <button (click)="closeDialog()" class="close-btn color-secondary" mat-raised-button>ZATVORI</button>
+</div>

@@ -1,1 +1,62 @@
-<p>ceo-product-administration works!</p>
+<div class="table-of-products">
+  <div class="header">
+    <h1>Pregled proizvoda</h1>
+  </div>
+  <hr>
+  <mat-form-field class="search-product">
+    <mat-label>Pretraga proizvoda...</mat-label>
+      <input #inputPar (keyup)="searchProduct(inputPar.value)" matInput type="text">
+  </mat-form-field>
+  <div class="product-table">
+    <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+      <ng-container matColumnDef="productCode">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Šifra</th>
+        <td *matCellDef="let product" mat-cell> {{ product?.productCode }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="productName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Naziv</th>
+        <td *matCellDef="let product" mat-cell> {{product?.fullName}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="countryOfOrigin">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Zemlja porekla</th>
+        <td *matCellDef="let product" mat-cell> {{product?.countryOfOrigin}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Količina na stanju</th>
+        <td *matCellDef="let product" mat-cell>{{product?.storageQuantity}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Cena po komadu(RSD)</th>
+        <td *matCellDef="let product" mat-cell>{{product?.price}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="options">
+        <th *matHeaderCellDef mat-header-cell> Opcije</th>
+        <td *matCellDef="let product" class="edit-options" mat-cell>
+          <i (click)="openEditDialog(product)" *ngIf="product.recordStatus"
+             class="large material-icons edit-btn" matTooltip="Izmeni proizvod">edit</i>
+          <i (click)="toggleProductRecordStatus(product.id, false)" *ngIf="product.recordStatus"
+             class="large material-icons delete-btn" matTooltip="Deaktiviraj proizvod">block</i>
+          <i (click)="toggleProductRecordStatus(product.id, true)" *ngIf="!product.recordStatus"
+             class="large material-icons enable-btn" matTooltip="Aktiviraj proizvod">done</i>
+        </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" class="paginator">
+    </mat-paginator>
+    <div class="add-categories">
+      <button (click)="openProductEmployeeDialog()" class="color-secondary add-btn" mat-fab matTooltip="Dodajte zaposlenog">
+        <mat-icon>add</mat-icon>
+      </button>
+      <div *ngIf="dataSource.filteredData.length == 0" class="no-data">Nema podataka za zadati parametar</div>
+    </div>
+  </div>
+</div>

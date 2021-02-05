@@ -3,6 +3,11 @@ export const filterUser = (userId, inputPar: string) => {
     .some(prop => prop.toLowerCase().startsWith(inputPar.toLowerCase()));
 };
 
+export const filterProduct = (productId, inputPar: string) => {
+  return [productId.productCode, productId.fullName]
+    .some(prop => prop.toLowerCase().startsWith(inputPar.toLowerCase()));
+};
+
 
 /*
 export const sortCategoryDate = (categ1: IUserCategory, categ2: IUserCategory): number => {

@@ -15,7 +15,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CeoEmployeeAdministrationComponent implements OnInit {
 
-  displayedColumns: string[] = ['firstName', 'surname', 'jmbg', 'employmentStartDate', 'employmentEndDate', 'options'];
+  displayedColumns: string[] = ['firstName', 'surname', 'jmbg', 'employmentStartDate', 'options'];
   dataSource = new MatTableDataSource([]);
   employeeList;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -51,7 +51,7 @@ export class CeoEmployeeAdministrationComponent implements OnInit {
     });
   }
 
-  openWorkerInfo(data): void {
+  openViewEmployeeDialog(data): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = '300px';
@@ -61,8 +61,14 @@ export class CeoEmployeeAdministrationComponent implements OnInit {
     this.dialog.open(CeoEmployeeViewComponent, dialogConfig).afterClosed();
   }
 
-  openEditDialog(employee: any): void {
-    console.log('EDIT');
+  openEditDialog(data: any): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '300px';
+    dialogConfig.data = {
+      id: data.id
+    };
+    this.dialog.open(CeoEmployeeCreateDialogComponent, dialogConfig).afterClosed();
   }
 
   openSnackBar(message: string, action: string): void {

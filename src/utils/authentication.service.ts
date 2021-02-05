@@ -41,7 +41,7 @@ export class AuthenticationService {
         if (this.isCEO()) {
           this.router.navigate(['employee-overview']);
         }else if (this.isBuyer()){
-
+          this.router.navigate(['products-catalog']);
         }else {
           this.router.navigate(['product-overview']);
         }

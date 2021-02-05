@@ -15,6 +15,10 @@ export class OrderServices {
     return this.http.get(`${environment.apiUrl}/orders`, {responseType: 'json'});
   }
 
+  getAllOrderByBuyerId(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/orders/forBuyer`, {responseType: 'json'});
+  }
+
   calculateTotal(orderId: number): Observable<any> {
     return this.http.get(`${environment.apiUrl}/orders/${orderId}/calculateTotal`, {responseType: 'json'});
   }
@@ -25,6 +29,10 @@ export class OrderServices {
 
   getAllOrderProductsByOrderId(orderId: number): Observable<any> {
     return this.http.get(`${environment.apiUrl}/orders/${orderId}/orderproducts`, {responseType: 'json'});
+  }
+
+  saveOrderDTO(orderDTO): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/orders/saveOrderDTO`, orderDTO, {responseType: 'json'});
   }
 
 }

@@ -4,7 +4,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {OrderServices} from '../../services/order-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {CeoProductCreateComponent} from '../ceo-product-administration/ceo-product-create/ceo-product-create.component';
 import {CeoOrdersProductsDialogComponent} from './ceo-orders-products-dialog/ceo-orders-products-dialog.component';
 
 @Component({
@@ -24,14 +23,15 @@ export class CeoOrdersAdministrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllOrders();
+
   }
 
   getAllOrders(): void {
     this.orderService.getAllOrder().subscribe(resOrder => {
       this.orderList = resOrder;
+      localStorage.setItem('korpa', resOrder);
       this.orderList.forEach(order => {
         this.orderService.calculateTotal(order.id).subscribe(resTotal => {
-          console.log(resTotal);
           order.total = resTotal;
         });
       });

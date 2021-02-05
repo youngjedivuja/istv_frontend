@@ -14,7 +14,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {RouterModule, Routes} from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -38,6 +37,8 @@ import { CeoEmployeeCreateDialogComponent } from './ceo-employee-administration/
 import { CeoEmployeeViewComponent } from './ceo-employee-administration/ceo-employee-view/ceo-employee-view.component';
 import { CeoProductCreateComponent } from './ceo-product-administration/ceo-product-create/ceo-product-create.component';
 import { CeoOrdersProductsDialogComponent } from './ceo-orders-administration/ceo-orders-products-dialog/ceo-orders-products-dialog.component';
+import { BuyerCartComponentComponent } from './buyer-product-overview/buyer-cart-component/buyer-cart-component.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 const appRoutes: Routes = [
@@ -45,6 +46,8 @@ const appRoutes: Routes = [
   {path: 'employee-overview', component: CeoEmployeeAdministrationComponent, canActivate: [AuthGuard]},
   {path: 'order-overview', component: CeoOrdersAdministrationComponent, canActivate: [AuthGuard]},
   {path: 'app-component', component: AppComponent, canActivate: [AuthGuard]},
+  {path: 'products-catalog', component: BuyerProductOverviewComponent, canActivate: [AuthGuard]},
+  {path: 'buyer-orders', component: BuyerOrdersOverviewComponent, canActivate: [AuthGuard]},
   {path: '', component: LoginComponent},
 ];
 
@@ -63,6 +66,7 @@ registerLocaleData(localeRS);
     CeoEmployeeViewComponent,
     CeoProductCreateComponent,
     CeoOrdersProductsDialogComponent,
+    BuyerCartComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,6 @@ registerLocaleData(localeRS);
     MatListModule,
     MatSidenavModule,
     RouterModule.forRoot(appRoutes),
-    MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
     MatSnackBarModule,
@@ -94,6 +97,7 @@ registerLocaleData(localeRS);
     MatSortModule,
     MatStepperModule,
     MatTabsModule,
+    MatTableModule,
   ], entryComponents: [
   ],
   providers: [

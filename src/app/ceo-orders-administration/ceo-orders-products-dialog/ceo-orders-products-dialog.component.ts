@@ -24,11 +24,11 @@ export class CeoOrdersProductsDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllOrderProducts();
+    this.orderProductList = localStorage.getItem('korpa');
   }
 
   getAllOrderProducts(): void {
     this.orderService.getAllOrderProductsByOrderId(this.data.id).subscribe(resOrderProducts => {
-      console.log(resOrderProducts);
       this.orderProductList = resOrderProducts;
       this.dataSource.data = this.orderProductList;
       this.dataSource.paginator = this.paginator;

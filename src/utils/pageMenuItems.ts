@@ -1,13 +1,9 @@
-export const employeeMenu: IMenuItem[] = [
-  {title: 'Upis sati', icon: 'more_time', path: '/upis-sati'},
-  {title: 'Istorija upisa', icon: 'history', path: '/istorija-upisa'},
-  {title: 'Zaposleni', icon: 'group', path: '/zaposleni'},
-  {title: 'Efektivni sati', icon: 'hourglass_top', path: '/efektivni-sati'},
-  {title: 'Kategorije', icon: 'category', path: '/pregled-kategorije'},
-  {title: 'Moj profil', icon: 'person', path: '/moj-profil'},
+export const buyerMenu: IMenuItem[] = [
+  {title: 'Katalog proizvoda', icon: 'explore', path: '/products-catalog'},
+  {title: 'Moje porudžbine', icon: 'account_balance', path: '/buyer-orders'},
 ];
 
-export const buyerMenu: IMenuItem[] = [
+export const employeeMenu: IMenuItem[] = [
   {title: 'Proizvodi', icon: 'shopping_bag', path: '/product-overview'},
   {title: 'Porudžbine', icon: 'attach_money', path: '/order-overview'},
 ];

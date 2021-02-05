@@ -25,7 +25,12 @@ hr {
   margin-right: 10%;
 }
 
-.orders-table {
+.search-product {
+  margin-left: 60%;
+  width: 30%;
+}
+
+.product-table {
   width: 80%;
   height: 80%;
   margin-left: 10%;
@@ -98,20 +103,6 @@ table {
   transition: .3s;
 }
 
-.product-btn {
-  color: white;
-  text-shadow: -1px -1px 0 black,
-  1px -1px 0 black,
-  -1px 1px 0 black,
-  1px 1px 0 black;
-  user-select: none;
-}
-
-.product-btn:hover {
-  color: teal;
-  transition: .3s;
-}
-
 .delete-btn {
   color: white;
   text-shadow: -1px -1px 0 #e50c0c,
@@ -126,9 +117,35 @@ table {
   transition: .3s;
 }
 
+
+.edit-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  user-select: none;
+}
+
+.edit-btn:hover {
+  color: teal;
+  transition: .3s;
+}
+
 .paginator {
   background-color: #c8c5c5;
   color: black;
+}
+
+.add-product {
+  float: right;
+  margin-top: 10px;
+  background-color: #197278;
+  color: white !important;
+}
+
+.add-product:hover {
+  background-color: #125256 !important;
 }
 
 .add-categories {
@@ -154,11 +171,15 @@ table {
 }
 
 
-
 @media only screen and (max-width: 600px) {
 
-  .table-of-orders > h1 {
+  .table-of-products > h1 {
     font-size: 27px;
+  }
+
+  .search-product {
+    width: 80%;
+    margin-left: 10%;
   }
 
 
@@ -170,6 +191,24 @@ table {
     padding-right: 0;
   }
 
+}
+.close-btn{
+  float: right;
+  color: white;
+  margin-top: 1em;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+
+.counter-th{
+  padding-left: 2em;
+}
+
+.counter {
+  text-align: center;
 }
 
 .disable {

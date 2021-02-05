@@ -53,7 +53,7 @@
     <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" class="paginator">
     </mat-paginator>
     <div class="add-categories">
-      <button (click)="openProductEmployeeDialog()" class="color-secondary add-btn" mat-fab matTooltip="Dodajte zaposlenog">
+      <button (click)="openProductEmployeeDialog()" class="color-secondary add-btn" mat-fab matTooltip="Dodajte proizvod">
         <mat-icon>add</mat-icon>
       </button>
       <div *ngIf="dataSource.filteredData.length == 0" class="no-data">Nema podataka za zadati parametar</div>

@@ -78,7 +78,6 @@ export class CeoEmployeeAdministrationComponent implements OnInit {
   }
 
   toggleEmployeeRecordStatus(id: any, status: boolean | undefined): void {
-    console.log(id);
     this.employeeService.toggleEmployeeRecordStatus(id).subscribe(() => {
       this.getAllEmployee();
       if (status) {

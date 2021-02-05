@@ -1,0 +1,37 @@
+<mat-horizontal-stepper #stepper [linear]="false">
+  <mat-step>
+    <form [formGroup]="form">
+    <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+      <ng-container matColumnDef="productInfo">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Informacije o proizvodu</th>
+        <td *matCellDef="let product" mat-cell> {{ product?.productCode }} - {{product?.fullName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="counter-th">Količinа</th>
+        <td *matCellDef mat-cell>
+            <md-input-container >
+            <input mdInput type="number" formControlName="quantity"/>
+            </md-input-container>
+        </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+    </table>
+      <button (click)="next()" class="close-btn color-secondary" mat-raised-button>Dalje</button>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="orderForm">
+      <div class="view">
+        <mat-form-field class="full-width username">
+          <mat-label>Adresa</mat-label>
+          <label>
+            <input formControlName="deliveryAddress" matInput>
+          </label>
+        </mat-form-field>
+      </div>
+      <button (click)="saveOrder()" class="close-btn color-secondary" mat-raised-button>Sačuvaj</button>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

@@ -23,7 +23,6 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSortModule} from '@angular/material/sort';
 import {JwtInterceptor} from '../utils/jwt.interceptor';
-import {AuthGuard} from '../utils/auth.guard';
 import {MatStepperModule} from '@angular/material/stepper';
 import {registerLocaleData} from '@angular/common';
 import localeRS from '@angular/common/locales/sr-Latn';
@@ -39,6 +38,7 @@ import { CeoProductCreateComponent } from './ceo-product-administration/ceo-prod
 import { CeoOrdersProductsDialogComponent } from './ceo-orders-administration/ceo-orders-products-dialog/ceo-orders-products-dialog.component';
 import { BuyerCartComponentComponent } from './buyer-product-overview/buyer-cart-component/buyer-cart-component.component';
 import {MatTableModule} from '@angular/material/table';
+import {AuthGuard} from '../utils/auth.guard';
 
 
 const appRoutes: Routes = [

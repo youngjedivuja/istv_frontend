@@ -38,9 +38,9 @@
         <th *matHeaderCellDef mat-header-cell> Opcije</th>
         <td *matCellDef="let order" class="edit-options" mat-cell>
           <i (click)="toggleProductOrderStatus(order.id, 'Odbijena')" *ngIf="order.orderStatus === 'Na čekanju'"
-             class="large material-icons delete-btn" matTooltip="Deaktiviraj proizvod">block</i>
+             class="large material-icons delete-btn" matTooltip="Odbij porudžbinu">block</i>
           <i (click)="toggleProductOrderStatus(order.id, 'Prihvaćena')" *ngIf="order.orderStatus === 'Na čekanju'"
-             class="large material-icons enable-btn" matTooltip="Aktiviraj proizvod">done</i>
+             class="large material-icons enable-btn" matTooltip="Prihvati porudžbinu">done</i>
         </td>
       </ng-container>
       <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>

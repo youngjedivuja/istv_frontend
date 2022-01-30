@@ -1,0 +1,66 @@
+<div class="document-table">
+  <table [dataSource]="dataSource" matSort class="mat-elevation-z8" mat-table>
+
+    <ng-container matColumnDef="fileName">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Ime fajla</th>
+      <td *matCellDef="let document" mat-cell> {{ document.file_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="creatorName">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Ime kreatora fajla</th>
+      <td *matCellDef="let document" mat-cell> {{ document.creator }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Kategorija</th>
+      <td *matCellDef="let document" mat-cell> {{ document.category }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th *matHeaderCellDef mat-header-cell> Brisanje</th>
+      <td *matCellDef="let document" class="edit-options" mat-cell>
+        <i (click)="deleteDocument(document)"
+           class="large material-icons delete-btn" matTooltip="Obriši dokument">delete</i>
+      </td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'disable': !row?.recordStatus}" mat-row></tr>
+  </table>
+</div>
+
+<div>
+  <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="name">Kategorija</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+
+
+        <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="file">File</label>
+      <input
+        formControlName="file"
+        id="file"
+        type="file"
+        class="form-control"
+        (change)="onFileChange($event)">
+      <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+        <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+      </div>
+    </div>
+
+    <button class="color-secondary add-btn" mat-fab [disabled]="myForm.invalid" type="submit">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </form>
+</div>

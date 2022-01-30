@@ -7,6 +7,9 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {CeoEmployeeCreateDialogComponent} from './ceo-employee-create-dialog/ceo-employee-create-dialog.component';
 import {CeoEmployeeViewComponent} from './ceo-employee-view/ceo-employee-view.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {
+  CeoDocumentAdministrationDialogComponent
+} from './ceo-document-administration-dialog-component/ceo-document-administration-dialog.component';
 
 @Component({
   selector: 'app-ceo-employee-administration',
@@ -86,5 +89,15 @@ export class CeoEmployeeAdministrationComponent implements OnInit {
         this.openSnackBar('Uspesno ste deaktivirali zaposlenog', 'Zatvori');
       }
     });
+  }
+
+  openDocumentUpload(data): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '900px';
+    dialogConfig.data = {
+      id: data.id
+    };
+    this.dialog.open(CeoDocumentAdministrationDialogComponent, dialogConfig).afterClosed();
   }
 }

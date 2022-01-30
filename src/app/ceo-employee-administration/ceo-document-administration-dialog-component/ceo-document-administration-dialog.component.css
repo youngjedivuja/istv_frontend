@@ -1,0 +1,35 @@
+.add-btn {
+  float: right;
+  margin-right: 25px;
+  margin-top: 15px;
+  outline: none;
+}
+
+.add-btn:hover {
+  background-color: #197278 !important;
+  transition: 250ms;
+}
+
+.document-table {
+  width: 100% !important;
+  height: 80%;
+  margin: 2% 5%;
+}
+
+table{
+  width: 90%;
+}
+
+.delete-btn {
+  color: white;
+  text-shadow: -1px -1px 0 #e50c0c,
+  1px -1px 0 #e50c0c,
+  -1px 1px 0 #e50c0c,
+  1px 1px 0 #e50c0c;
+  user-select: none;
+}
+
+.delete-btn:hover {
+  color: #e50c0c;
+  transition: .3s;
+}

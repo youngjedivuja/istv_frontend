@@ -17,10 +17,12 @@
     </ng-container>
 
     <ng-container matColumnDef="delete">
-      <th *matHeaderCellDef mat-header-cell> Brisanje</th>
+      <th *matHeaderCellDef mat-header-cell> Opcije</th>
       <td *matCellDef="let document" class="edit-options" mat-cell>
         <i (click)="deleteDocument(document)"
            class="large material-icons delete-btn" matTooltip="Obriši dokument">delete</i>
+        <i (click)="downloadDocument(document)"
+           class="large material-icons download-btn" matTooltip="Skini dokument">download</i>
       </td>
     </ng-container>
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>

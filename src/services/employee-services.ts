@@ -12,23 +12,23 @@ export class EmployeeServices {
   }
 
   getAllEmployee(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/employees`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/employees`, {responseType: 'json'});
   }
 
   toggleEmployeeRecordStatus(employeeId: number): Observable<any> {
-    return this.http.put(`${environment.apiUrl}/employees/${employeeId}/toggle`, {responseType: 'json'});
+    return this.http.put(`${environment.springUrl}/employees/${employeeId}/toggle`, {responseType: 'json'});
   }
 
   getEmployeeById(employeeId: number): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/employees/${employeeId}`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/employees/${employeeId}`, {responseType: 'json'});
   }
 
   saveEmployee(employee): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/employees/saveEmployeeDTO`, employee, {responseType: 'json'});
+    return this.http.post(`${environment.springUrl}/employees/saveEmployeeDTO`, employee, {responseType: 'json'});
   }
 
   updateEmployee(employee): Observable<any> {
-    return this.http.put(`${environment.apiUrl}/employees`, employee, {responseType: 'json'});
+    return this.http.put(`${environment.springUrl}/employees`, employee, {responseType: 'json'});
   }
 
 }

@@ -12,27 +12,27 @@ export class OrderServices {
   }
 
   getAllOrder(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/orders`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/orders`, {responseType: 'json'});
   }
 
   getAllOrderByBuyerId(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/orders/forBuyer`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/orders/forBuyer`, {responseType: 'json'});
   }
 
   calculateTotal(orderId: number): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/orders/${orderId}/calculateTotal`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/orders/${orderId}/calculateTotal`, {responseType: 'json'});
   }
 
   toggleOrderStatus(orderId: number, status: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/orders/${orderId}/toggleOrderStatus/${status}`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/orders/${orderId}/toggleOrderStatus/${status}`, {responseType: 'json'});
   }
 
   getAllOrderProductsByOrderId(orderId: number): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/orders/${orderId}/orderproducts`, {responseType: 'json'});
+    return this.http.get(`${environment.springUrl}/orders/${orderId}/orderproducts`, {responseType: 'json'});
   }
 
   saveOrderDTO(orderDTO): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/orders/saveOrderDTO`, orderDTO, {responseType: 'json'});
+    return this.http.post(`${environment.springUrl}/orders/saveOrderDTO`, orderDTO, {responseType: 'json'});
   }
 
 }

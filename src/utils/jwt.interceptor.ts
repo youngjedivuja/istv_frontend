@@ -11,7 +11,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const isApiUrl = request.url.startsWith(environment.apiUrl);
+    const isApiUrl = request.url.startsWith(environment.springUrl);
     if (isApiUrl && this.authenticationService.userJwtToken) {
       request = request.clone({
         setHeaders: {

@@ -33,7 +33,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): void {
-    this.http.post(`${environment.apiUrl}/login`, {username, password}, {responseType: 'text'}).subscribe(token => {
+    this.http.post(`${environment.springUrl}/login`, {username, password}, {responseType: 'text'}).subscribe(token => {
       if (token) {
         this.userToken = jwt_decode(token);
         this.token = token;

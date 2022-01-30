@@ -33,3 +33,14 @@ table{
   color: #e50c0c;
   transition: .3s;
 }
+
+.download-btn {
+  color: white;
+  background: #2ecc71;
+  user-select: none;
+}
+
+.download-btn:hover {
+  background-color: #197278 !important;
+  transition: 250ms;
+}

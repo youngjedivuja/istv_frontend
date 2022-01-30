@@ -8,6 +8,7 @@ import {DocumentService} from '../../../services/document-service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {EmployeeServices} from '../../../services/employee-services';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-ceo-document-administration-dialog-component',
@@ -82,7 +83,7 @@ export class CeoDocumentAdministrationDialogComponent implements OnInit {
         file_name: this.myForm.get('fileSource').value.name
       };
       this.documentService.saveDocument(document, this.myForm.get('fileSource').value).subscribe(() => {
-          this.getDocuments();
+        this.getDocuments();
       });
 
     });
@@ -103,5 +104,14 @@ export class CeoDocumentAdministrationDialogComponent implements OnInit {
       this.getDocuments();
     });
     console.log('delete');
+  }
+
+  downloadDocument(document): void {
+    this.documentService.downloadDocument(document.documentId).subscribe(response => {
+      console.log(response);
+      // const blob: any = new Blob([response.blob()], { type: 'text/json; charset=utf-8' });
+      saveAs(response);
+      this.getDocuments();
+    });
   }
 }

@@ -39,6 +39,7 @@ import { CeoOrdersProductsDialogComponent } from './ceo-orders-administration/ce
 import { BuyerCartComponentComponent } from './buyer-product-overview/buyer-cart-component/buyer-cart-component.component';
 import {MatTableModule} from '@angular/material/table';
 import {AuthGuard} from '../utils/auth.guard';
+import { CeoDocumentAdministrationDialogComponent } from './ceo-employee-administration/ceo-document-administration-dialog-component/ceo-document-administration-dialog.component';
 
 
 const appRoutes: Routes = [
@@ -67,6 +68,7 @@ registerLocaleData(localeRS);
     CeoProductCreateComponent,
     CeoOrdersProductsDialogComponent,
     BuyerCartComponentComponent,
+    CeoDocumentAdministrationDialogComponent,
   ],
   imports: [
     BrowserModule,
